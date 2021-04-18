@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function apiPost(){
+            axios.post('http://localhost:3333/translateSentence', { sentence: document.getElementById("sentence").value })
+            .then(response => {
+                document.getElementById("pintao").setAttribute('value', response.data.translated);
+            }).catch(error => console.log(error));
+        }
+    </script>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="sentence" placeholder="Insira uma frase pra traduzi maluco" size=100></input>
+    <input type="button" value="Traduzir" onclick={apiPost()}>
+    <input type="text" id="pintao" size=100>
+</body>
+
+</html>

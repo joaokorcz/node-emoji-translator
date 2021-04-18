@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../node_modules/axios/dist/axios.min.js"></script>
     <script>
         function apiPost(){
             axios.post('http://localhost:3333/translateSentence', { sentence: document.getElementById("sentence").value })
